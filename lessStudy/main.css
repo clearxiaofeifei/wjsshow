@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*1.这样的注释是会编译到css当中的 css也支持*/
+/* 样式类名  mixin 混入*/
+/* 函数  mixin */
+/*定义一个可以传参的方法*/
+.FLBL {
+  float: right;
+  border-bottom: 1px solid #ccc;
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+}
+/*嵌套 语法*/
+/*合作伙伴模块样式*/
+.wjs_partner {
+  padding: 30px 0;
+}
+.wjs_partner ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+.wjs_partner ul li {
+  display: inline-block;
+}
+.wjs_partner ul li a {
+  display: none;
+  margin: 0 15px;
+}
+.wjs_partner ul li a:hover {
+  color: #e92322;
+}
+.wjs_partner ul li a span {
+  font-size: 60px;
+}
+/*我是topBar*/
+/*内置函数  运算*/
+.col-xs-1 {
+  width: 6.66666667%;
+  padding: 0 6px;
+  color: #ff3333;
+}
