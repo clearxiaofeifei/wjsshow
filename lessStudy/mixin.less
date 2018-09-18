@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 样式类名  mixin 混入*/
+// 组合样式  左浮动 右浮动  宽度50% 左边框 右边框 下边框
+//.f_left{
+//  float: left;
+//}
+//.f_right{
+//  float: right;
+//}
+//.b_left{
+//  border-left: 1px solid #ccc;
+//}
+//.b_right{
+//  border-right: 1px solid #ccc;
+//}
+//需要 左浮动左边框
+//通过  左浮动 左边框 混入 到了FLBL
+//.FLBL{
+//  .f_left();
+//  .b_left();
+//}
+
+/* 函数  mixin */
+// js var a = function(name){}  function a(name){}
+// 类名后加括号
+.f_left(){
+  float: left;
+}
+.f_right(){
+  float: right;
+}
+.b_left(){
+  border-left: 1px solid #ccc;
+}
+.b_right(){
+  border-right: 1px solid #ccc;
+}
+
+/*定义一个可以传参的方法*/
+// @direcon 定义参数 但是一定要有默认变量
+// 使用变量 直接使用变量名称就可以
+// 拼接变量的时候  @{direction}
+.border(@direction:left){
+  border-@{direction}: 1px solid #ccc;
+}
+
+// 圆角方法
+.borderRadius(@width:10px){
+  border-radius: @width;
+  -webkit-border-radius: @width;
+  -moz-border-radius: @width;
+  -ms-border-radius: @width;
+  -o-border-radius: @width;
+}
+
+//需要 左浮动左边框
+//通过  左浮动 左边框 混入 到了FLBL
+.FLBL{
+  .f_right();
+  .border(bottom);
+  .borderRadius(200px);
+}
